@@ -1,0 +1,29 @@
+/* Dein Quartierprojekt variables */
+
+body {
+  --lightpink:#cccaf9;
+  --lightgreen: #caf9cf;
+  --lightblue: #c9e8fb;
+  --magenta: #2c2f88;
+  --magenta-rgb: 44,47,136;
+  --yellow: #faaf3b;
+  --warning: var(--yellow);
+  /*--success: var(--lightgreen);*/
+  --complementary: var(--lightblue);
+  --banner-color: var(--lightblue);
+  --banner-text-color: var(--magenta);
+  --heading-color: var(--color-black);
+  --space-nav-bg-color: var(--lightblue);
+  --space-nav-color: var(--magenta);
+  --neutral-color-1: var(--lightpink);
+  --text-secondary: var(--magenta);
+  --button-secondary: var(--magenta);
+  --button-secondary-rgb: var(--magenta-rgb);
+  --card-hover-bg-color: var(--lightblue);
+  --card-title-color: var(--magenta);
+  /*--primary: var(--lightblue);*/
+  --secondary:var(--magenta);
+  /*--tertiary: var(--lightpink);*/
+}
+  
+  

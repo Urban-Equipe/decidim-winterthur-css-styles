@@ -1,0 +1,17 @@
+/*Reduce visibility of cancel order button*/
+.button__secondary.cancel-order {
+  background: transparent;
+  font-size: var(--font-size-small);
+  color: var(--magenta);
+  border: 1px var(--magenta) solid;
+}
+
+/*Hide Quartierprojekt proposals from Menu in voting phase*/
+/*.participatory-space__nav li:last-of-type, .menu-bar__secondary-dropdown__menu li:last-of-type {
+  display: none;
+}*/
+
+/*Hide vote button in finished vote*/
+.budget-list__data--added, .button_to {
+  display: none;
+}

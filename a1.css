@@ -1,0 +1,140 @@
+/*–––– Import fonts used for processes –––––*/
+@import url("https://use.typekit.net/qhe5ioe.css");
+
+:root {
+  --primary: #FF1900;
+  --primary-rgb: 255,25,0;
+  --secondary: #FF1900;
+  --secondary-rgb: 255,25,0;
+  --tertiary: #44443f;
+  --tertiary-rgb: 255,25,0;
+  --font-size-base: 18px;
+  --font-size-micro: 0.6rem;
+  --font-size-xsmall: 0.725rem;
+  --font-size-small: 0.85rem;
+  --font-size-regular:1rem;
+  --font-size-medium:1.15rem;
+  --font-size-large:1.25rem;
+  --font-size-xlarge:2rem;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --font-family: "news-gothic-std",sans-serif;
+  --line-height-paragraph: 1.5rem;
+  --margin-top-elements: 2em;
+  --margin-bottom-elements: 0.5em;
+  --background-color: #222;
+  --mini-footer-color: #333;
+  --winterthur-grey: #44443f;
+  --winterthur-lightgrey: #ececea;
+  --color-black: #000;
+  --color-white: #fff;
+  --success: #37aa32;
+  --warning: #ffb703;
+  --alert: #B40030;
+  --complementary: #00E6FF;
+  --footer-links: var(--color-white);
+/*Theme variables start here, copy paste and adapt to scoped space for process/organisation theming*/
+  --banner-color: var(--primary);
+  --banner-text-color: var(--color-white);
+  --heading-color: var(--color-black);
+  --space-nav-bg-color: var(--primary);
+  --space-nav-color: var(--color-white);
+  --neutral-color-1: var(--winterthur-lightgrey);
+  --text-secondary: var(--primary);
+  --button-secondary: var(--primary);
+  --button-secondary-rgb: var(--primary-rgb);
+  --button-tertiary: var(--tertiary);
+  --card-hover-bg-color: none;
+  --card-title-color: inherit;
+  --marker-color: var(--warning);
+}
+
+/*@supports (color: rgb(255 25 0 / 0)) {
+  color: var(--primary);
+}*/
+
+/*.participatory-space__container > [id^=html-block] {
+--tw-prose-body: #000!important;
+--tw-prose-headings: #000!important;
+--tw-prose-lead: #000!important;
+--tw-prose-links: var(--primary)!important;
+--tw-prose-bold: #111827;
+--tw-prose-counters: #6b7280;
+--tw-prose-bullets: #000!important;
+--tw-prose-hr: #e5e7eb;
+--tw-prose-quotes: #111827;
+--tw-prose-quote-borders: #e5e7eb;
+--tw-prose-captions: #6b7280;
+--tw-prose-kbd: #111827;
+--tw-prose-kbd-shadows: 17 24 39;
+--tw-prose-code: #111827;
+--tw-prose-pre-code: #e5e7eb;
+--tw-prose-pre-bg: #1f2937;
+--tw-prose-th-borders: #d1d5db;
+--tw-prose-td-borders: #e5e7eb;
+--tw-prose-invert-body: #d1d5db;
+--tw-prose-invert-headings: #fff;
+--tw-prose-invert-lead: #9ca3af;
+--tw-prose-invert-links: #fff;
+--tw-prose-invert-bold: #fff;
+--tw-prose-invert-counters: #9ca3af;
+--tw-prose-invert-bullets: #4b5563;
+--tw-prose-invert-hr: #374151;
+--tw-prose-invert-quotes: #f3f4f6;
+--tw-prose-invert-quote-borders: #374151;
+--tw-prose-invert-captions: #9ca3af;
+--tw-prose-invert-kbd: #fff;
+--tw-prose-invert-kbd-shadows: 255 255 255;
+--tw-prose-invert-code: #fff;
+--tw-prose-invert-pre-code: #d1d5db;
+--tw-prose-invert-pre-bg: rgb(0 0 0 / 50%);
+--tw-prose-invert-th-borders: #4b5563;
+--tw-prose-invert-td-borders: #374151;
+font-size: 1rem;
+line-height: 1.75;
+}*/
+
+/* Editor content*/
+.editor-content, .content-block__description {
+--tw-prose-body: var(--winterthur-grey);
+--tw-prose-headings: var(--heading-color);
+--tw-prose-lead: #4b5563;
+--tw-prose-links: #FF1900;
+--tw-prose-bold: #111827;
+--tw-prose-counters: #6b7280;
+--tw-prose-bullets: #d1d5db;
+--tw-prose-hr: #e5e7eb;
+--tw-prose-quotes: #111827;
+--tw-prose-quote-borders: #e5e7eb;
+--tw-prose-captions: #6b7280;
+--tw-prose-kbd: #111827;
+--tw-prose-kbd-shadows: 17 24 39;
+--tw-prose-code: #111827;
+--tw-prose-pre-code: #e5e7eb;
+--tw-prose-pre-bg: #1f2937;
+--tw-prose-th-borders: #d1d5db;
+--tw-prose-td-borders: #e5e7eb;
+--tw-prose-invert-body: #d1d5db;
+--tw-prose-invert-headings: #fff;
+--tw-prose-invert-lead: #9ca3af;
+--tw-prose-invert-links: #fff;
+--tw-prose-invert-bold: #fff;
+--tw-prose-invert-counters: #9ca3af;
+--tw-prose-invert-bullets: #4b5563;
+--tw-prose-invert-hr: #374151;
+--tw-prose-invert-quotes: #f3f4f6;
+--tw-prose-invert-quote-borders: #374151;
+--tw-prose-invert-captions: #9ca3af;
+--tw-prose-invert-kbd: #fff;
+--tw-prose-invert-kbd-shadows: 255 255 255;
+--tw-prose-invert-code: #fff;
+--tw-prose-invert-pre-code: #d1d5db;
+--tw-prose-invert-pre-bg: rgb(0 0 0 / 50%);
+--tw-prose-invert-th-borders: #4b5563;
+--tw-prose-invert-td-borders: #374151;
+ font-family: var(--font-family);
+  font-size: var(--font-size-regular);
+line-height: var(--line-height-paragraph);
+font-weight: var(--font-weight-normal);
+}
+
