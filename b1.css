@@ -10,14 +10,14 @@
 /* Font family */
 .font-sans { font-family: var(--font-family); }
 
-/* Font sizes */
-/* .text-micro { font-size: var(--font-size-micro); }
-   .text-xs    { font-size: var(--font-size-xsmall); } */
-.text-sm   { font-size: var(--font-size-small); }
-.text-base { font-size: var(--font-size-normal); }
-.text-md   { font-size: var(--font-size-normal); }
-/* .text-lg { font-size: var(--font-size-large); }
-   .text-xl { font-size: var(--font-size-xlarge); } */
+/* Font sizes – override Decidim/Tailwind, map to a1 variables */
+.text-micro { font-size: var(--font-size-micro); }
+.text-xs    { font-size: var(--font-size-xsmall); }
+.text-sm    { font-size: var(--font-size-small); }
+.text-base  { font-size: var(--font-size-normal); }
+.text-md    { font-size: var(--font-size-normal); }
+.text-lg    { font-size: var(--font-size-large); }
+.text-xl    { font-size: var(--font-size-xlarge); }
 
 /* Font weights */
 .font-normal { font-weight: var(--font-weight-normal); }
@@ -35,6 +35,32 @@
 .antialiased {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Decidim hardcoded font-size overrides – use variables from a1 */
+.budget-summary__progressbar-legend-strong,
+.budget-summary__button-dropdown_text p {
+  font-size: var(--font-size-small);
+}
+
+/* Card calendar (month/year use text-xs in Decidim) */
+.card__calendar-month,
+.card__calendar-year,
+.meeting__calendar-month,
+.meeting__calendar-year {
+  font-size: var(--font-size-xsmall);
+}
+
+/* Card metadata (use text-sm in Decidim) */
+.card__search-metadata > div,
+.card__list-metadata > div {
+  font-size: var(--font-size-small);
+}
+
+/* Activity content */
+.activity__content > div:first-child p,
+.activity__content > span:last-child:not(:only-child) {
+  font-size: var(--font-size-small);
 }
 
 
@@ -704,7 +730,7 @@ a.card__list:hover {
 }
 
 .card__list-content {
-  padding: 1rem;
+  padding: 0.5rem 1rem;
 }
 
 a .card__list-title {
@@ -724,6 +750,13 @@ a .card__list-title {
 .card__calendar-month,
 .meeting__calendar-month {
   background-color: var(--primary) !important;
+  font-weight: var(--font-weight-bold);
+}
+
+/* Calendar date block – month and year in bold */
+.card__calendar-year,
+.meeting__calendar-year {
+  font-weight: var(--font-weight-bold);
 }
 
 /* Calendar date tiles – same height as card container, date and info align */
@@ -738,7 +771,7 @@ a .card__list-title {
   align-self: stretch;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-shrink: 0;
 }
 

@@ -1,0 +1,11 @@
+/* ================================================================
+   C1 – Functional Adjustments
+   ================================================================
+   Display, visibility & behavioural overrides.
+   Load after a1, b1.
+   ================================================================ */
+
+/* Hide block reference */
+.participatory-space__block-reference {
+  display: none !important;
+}
