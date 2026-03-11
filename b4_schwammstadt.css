@@ -1,8 +1,13 @@
-/*–––––Schwammstadt–––––––*/
+/* ================================================================
+   B4 – Schwammstadt: Process-Specific Styles
+   ================================================================ */
+
+/* Hide comment sorting (single-option, not useful here) */
 .comment-order-by {
   display: none;
 }
 
+/* Hide metadata block */
 .metadata__container {
   display: none;
 }

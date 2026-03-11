@@ -1,15 +1,27 @@
-/* Dein Quartierprojekt variables */
+/* ================================================================
+   A3 – Dein Quartierprojekt: Scoped Theme Variables
+   Overrides the global tokens from A1 for this process.
+   ================================================================ */
 
 body {
-  --lightpink:#cccaf9;
+
+  /* Process-specific palette */
+  --lightpink: #cccaf9;
   --lightgreen: #caf9cf;
   --lightblue: #c9e8fb;
   --magenta: #2c2f88;
-  --magenta-rgb: 44,47,136;
+  --magenta-rgb: 44, 47, 136;
   --yellow: #faaf3b;
+
+  /* Semantic overrides */
   --warning: var(--yellow);
-  /*--success: var(--lightgreen);*/
+  /* --success: var(--lightgreen); */
   --complementary: var(--lightblue);
+  --secondary: var(--magenta);
+  /* --primary: var(--lightblue); */
+  /* --tertiary: var(--lightpink); */
+
+  /* Themeable overrides */
   --banner-color: var(--lightblue);
   --banner-text-color: var(--magenta);
   --heading-color: var(--color-black);
@@ -21,9 +33,4 @@ body {
   --button-secondary-rgb: var(--magenta-rgb);
   --card-hover-bg-color: var(--lightblue);
   --card-title-color: var(--magenta);
-  /*--primary: var(--lightblue);*/
-  --secondary:var(--magenta);
-  /*--tertiary: var(--lightpink);*/
 }
-  
-  

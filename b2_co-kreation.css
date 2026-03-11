@@ -1,44 +1,52 @@
-/*–––– Co-kreation functional adjustments ––––*/
+/* ================================================================
+   B2 – Co-Kreation: Process-Specific Styles
+   ================================================================ */
 
-.participatory-space__container>[id^=html-block] {
-color: var(--tw-prose-body);
-max-width: 100%!important;
+/* ---- HTML block container – mimic Tailwind .container breakpoints ---- */
+
+.participatory-space__container > [id^=html-block] {
+  color: var(--tw-prose-body);
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
-.participatory-space__container>[id^=html-block] {
-width: 100%!important;
-margin-right: auto;
-margin-left: auto;
-padding-right: 1rem;
-padding-left: 1rem;
+@media (min-width: 640px) {
+  .participatory-space__container > [id^=html-block] {
+    max-width: 640px !important;
+  }
 }
 
-@media (min-width: 640px){
-.participatory-space__container>[id^=html-block] {
-max-width: 640px!important;
-  }}
+@media (min-width: 768px) {
+  .participatory-space__container > [id^=html-block] {
+    max-width: 768px !important;
+  }
+}
 
-@media (min-width: 768px){
-.participatory-space__container>[id^=html-block] {
-max-width: 768px!important;
-  }}
+@media (min-width: 1024px) {
+  .participatory-space__container > [id^=html-block] {
+    max-width: 1024px !important;
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
+}
 
-@media (min-width: 1024px){
-.participatory-space__container>[id^=html-block] {
-max-width: 1024px!important;
-padding-right: 4rem;
-padding-left: 4rem;
-  }}
+@media (min-width: 1280px) {
+  .participatory-space__container > [id^=html-block] {
+    max-width: 1280px !important;
+  }
+}
 
-@media (min-width: 1280px){
-.participatory-space__container>[id^=html-block] {
-max-width: 1280px!important;
-  }}
+@media (min-width: 1536px) {
+  .participatory-space__container > [id^=html-block] {
+    max-width: 1536px !important;
+  }
+}
 
-@media (min-width: 1536px){
-.participatory-space__container>[id^=html-block] {
-max-width: 1536px!important;
-  }}
+/* ---- Side-by-side CTA buttons ---- */
 
 #two-buttons-cokreation {
   display: flex;
@@ -53,6 +61,8 @@ max-width: 1536px!important;
   }
 }
 
+/* ---- Accordion component ---- */
+
 .cokreation-accordion {
   border: 3px solid var(--primary);
   border-radius: 5px;
@@ -61,14 +71,11 @@ max-width: 1536px!important;
   width: 100%;
 }
 
-.cokreation-accordion >.button {
+.cokreation-accordion > .button {
   background-color: var(--primary);
   color: var(--color-white);
   text-decoration: none;
   font-weight: var(--font-weight-bold);
-  display: block; 
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  display: block;
+  margin: 2rem auto;
 }
