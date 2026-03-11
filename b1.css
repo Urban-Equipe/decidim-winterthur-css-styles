@@ -511,6 +511,7 @@ section:has(.participatory-space__hero) {
   justify-content: center;
 }
 
+.success > .flash__title,
 .success > .flash__message {
   color: var(--color-white);
 }
@@ -525,6 +526,7 @@ section:has(.participatory-space__hero) {
   justify-content: center;
 }
 
+.warning > .flash__title,
 .warning > .flash__message {
   color: var(--color-white);
 }
@@ -539,6 +541,7 @@ section:has(.participatory-space__hero) {
   justify-content: center;
 }
 
+.alert > .flash__title,
 .alert > .flash__message {
   color: var(--color-white);
 }
