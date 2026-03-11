@@ -1,39 +1,132 @@
-/*––––Main adjustments–––*/
-/* Adjust fonts */
+/* ================================================================
+   B1 – Global Layout, Typography & Component Styles
+   ================================================================ */
 
-/*assign general font-family & base size*/
-html{
+
+/* ================================================================
+   1. Typography Utility Classes
+   ================================================================ */
+
+/* Font family */
+.font-sans { font-family: var(--font-family); }
+
+/* Font sizes */
+/* .text-micro { font-size: var(--font-size-micro); }
+   .text-xs    { font-size: var(--font-size-xsmall); } */
+.text-sm   { font-size: var(--font-size-small); }
+.text-base { font-size: var(--font-size-normal); }
+.text-md   { font-size: var(--font-size-normal); }
+/* .text-lg { font-size: var(--font-size-large); }
+   .text-xl { font-size: var(--font-size-xlarge); } */
+
+/* Font weights */
+.font-normal { font-weight: var(--font-weight-normal); }
+.font-bold   { font-weight: var(--font-weight-bold); }
+
+/* Line height */
+.leading-paragraph { line-height: var(--line-height-paragraph); }
+
+/* Text transform */
+.normal-case { text-transform: none; }
+.uppercase   { text-transform: uppercase; }
+.lowercase   { text-transform: lowercase; }
+
+/* Font smoothing */
+.antialiased {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* ================================================================
+   2. Base Typography
+   ================================================================ */
+
+/* Base font size from variable */
+html {
   font-size: var(--font-size-base);
 }
 
 body {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-family: var(--font-family);
-    margin: 0;
-    line-height: var(--line-height-paragraph);
-}
-.h1, .h2, .h3, .h4, .h5, 
-.home__section-title, 
-header .menu-bar__secondary-dropdown__title, 
-.title-decorator,
-.decidim_awesome-custom_fields dt{
- font-family: var(--font-family);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-family);
+  margin: 0;
+  line-height: var(--line-height-paragraph);
 }
 
+/* Force font-family on headings & key elements */
+.h1, .h2, .h3, .h4, .h5,
+.home__section-title,
+header .menu-bar__secondary-dropdown__title,
+.title-decorator,
+.decidim_awesome-custom_fields dt {
+  font-family: var(--font-family);
+}
+
+/* Heading color */
 .h1, .h2, .h3, .h4, .h5 {
   color: var(--heading-color);
 }
 
+/* Font size override */
+.h2, 
+.home__section-title {
+   font-size: var(--font-size-xlarge); 
+}
+
+.h3 { 
+  font-size: var(--font-size-large); 
+}
+
+.h4, 
+.md\:button__xl { 
+  font-size: var(--font-size-medium); 
+}
+
+.h5,
+.home__menu-element--link, 
+.main-bar__links-desktop__item, 
+.menu-bar__breadcrumb-desktop > *  { 
+  font-size: var(--font-size-normal); 
+}
+
+/* Reduce font size on small UI elements */
+.activity__time,
+.activity__content,
+header .main-bar__links-desktop svg + span,
+.button__sm,
+.address__address,
+.author__metadata,
+.comment__opinion-label,
+.comments .add-comment .remaining-character-count, 
+.card__highlight-metadata, 
+.card__grid-metadata, 
+.filter span,
+.filter-help {
+  font-size: var(--font-size-small);
+}
+
+/* Font-weight override*/
+.h1, .h2, .h3, .h4, .h5, .home__menu-element--link, .main-bar__links-desktop__item {
+  font-weight: var(--font-weight-bold);
+}
+
+/* Secondary text color override */
 .text-secondary {
   color: var(--text-secondary);
 }
 
-/*remove all-caps*/
-.content-block__span, .participatory-space__metadata-item-title, .meeting-list__block-list-title {
+
+
+/* Remove all-caps on labels */
+.content-block__span,
+.participatory-space__metadata-item-title,
+.meeting-list__block-list-title {
   text-transform: none;
 }
 
+/* Editor content H1 */
 h1.editor-content {
   font-family: var(--font-family);
   color: var(--heading-color);
@@ -42,40 +135,116 @@ h1.editor-content {
   font-weight: var(--font-weight-bold);
 }
 
-.editor-content h2:not(:first-child), 
-.editor-content h3:not(:first-child), 
-.editor-content h4:not(:first-child), 
-.editor-content h5:not(:first-child), 
+/* Spacing above editor sub-headings */
+.editor-content h2:not(:first-child),
+.editor-content h3:not(:first-child),
+.editor-content h4:not(:first-child),
+.editor-content h5:not(:first-child),
 .editor-content h6:not(:first-child) {
- margin-top: 2rem;
+  margin-top: 2rem;
 }
 
+/* Center images in editor content */
+.editor-content-image img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Footer nav heading colors */
 nav[role="navigation"] > .h5,
-nav[role="navigation"] > .h4{
+nav[role="navigation"] > .h4 {
   color: var(--footer-links);
 }
 
-/*Top-bar*/
-header .main-bar__links-desktop__item{
+
+/* ================================================================
+   3. Header & Navigation
+   ================================================================ */
+
+/* Top-bar link color */
+header .main-bar__links-desktop__item {
   color: var(--primary);
 }
 
+header .main-bar__links-desktop svg + span {
+  font-weight: var(--font-weight-bold);
+}
+
+/* Home menu */
 #home__menu {
   background-color: var(--primary);
 }
 
-.home__menu-element--link:hover{
+.home__menu-element--link:hover {
   text-decoration-line: underline;
 }
 
-/*Content blocks*/
-/*.content-block__description {
-  font-size:var(--font-size-regular);
-  line-height: 27px!important;
-  --tw-prose-body: var(--winterthur-grey)!important;
-  --tw-prose-links: #FF1900!important;
-  --tw-prose-headings: #000!important;
-}*/
+/* Breadcrumb */
+header .menu-bar__breadcrumb-desktop > *,
+.menu-bar__breadcrumb-mobile__dropdown-trigger {
+  color: var(--color-white);
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Menu bar & dropdown backgrounds */
+header .menu-bar__secondary-dropdown__menu,
+#menu-bar,
+header .menu-bar__dropdown-menu {
+  --tw-bg-opacity: 0;
+  background-color: var(--primary);
+}
+
+header .menu-bar__secondary-dropdown nav {
+  background-color: var(--primary);
+}
+
+/* Widen process nav dropdown on desktop */
+@media (min-width: 768px) {
+  header .menu-bar__secondary-dropdown nav {
+    width: 45%;
+  }
+}
+
+/* TEMP: Force desktop logo on mobile (favicon workaround, checked 15.07.25 LK) */
+@media (max-width: 1024px) {
+  header .main-bar__logo-desktop {
+    display: block;
+    max-width: 217px;
+  }
+}
+
+header .main-bar__logo-mobile a {
+  display: none;
+}
+
+/* Avatar border */
+header .main-bar__avatar {
+  border-width: 2px;
+  border-color: var(--primary);
+}
+
+
+/* ================================================================
+   4. Space Navigation
+   ================================================================ */
+
+.participatory-space__nav-container {
+  background-color: var(--space-nav-bg-color);
+}
+
+.participatory-space__nav-item {
+  color: var(--space-nav-color);
+}
+
+.participatory-space__nav > :not([hidden]) ~ :not([hidden]) {
+  border-color: var(--space-nav-color);
+}
+
+
+/* ================================================================
+   5. Content Blocks & Metadata
+   ================================================================ */
 
 .content-block__description a {
   text-decoration: none;
@@ -87,7 +256,7 @@ header .main-bar__links-desktop__item{
 }
 
 .participatory-space__metadata-item {
-  font-size: var(--font-size-regular);
+  font-size: var(--font-size-normal);
   color: var(--winterthur-grey);
 }
 
@@ -96,226 +265,43 @@ header .main-bar__links-desktop__item{
   color: var(--winterthur-grey);
 }
 
-/*TEMP remove mobile logo (from favicon) and display normal logo*/
-/*Last checked 15.07.25 LK*/
-/*Replace logo with VBZ logo*/
-@media (max-width: 1024px){
-  header .main-bar__logo-desktop {
-    display: block;
-    max-width: 217px;
-  }
-}
-
-header .main-bar__logo-mobile a {
-  display: none;
-}
-
-/*Replace secondary grey*/
-@media (min-width: 768px){
-  .layout-2col__aside::before{
+/* Replace sidebar grey */
+@media (min-width: 768px) {
+  .layout-2col__aside::before {
     background-color: var(--winterthur-lightgrey);
-  }}
-
-/*––––––Increase width of survey, blog & page components–––––––*/
-
-.layout-1col.cols-6>* {
-grid-column: span 12 / span 12;
-align-self: flex-start;
-}
-
-@media (min-width: 768px){
-.layout-1col.cols-6>* {
-grid-column: span 12 / span 12;
-grid-column-start: 0;
-  }}
-
-@media (min-width: 1024px){
-.layout-1col.cols-6>* {
-grid-column: span 12 / span 12;
-grid-column-start: 0;
-  }}
-
-/*header*/
-header .menu-bar__breadcrumb-desktop>*, .menu-bar__breadcrumb-mobile__dropdown-trigger {
-  color: var(--color-white);
-  font-size: var( --font-size-normal);
-  font-weight: var(--font-weight-bold);
-}
-
-header .main-bar__links-desktop svg+span {
-  font-weight: var(--font-weight-bold);
-}
-
-/*Space Menus*/
-.participatory-space__nav-container {
-  background-color: var(--space-nav-bg-color);
-}
-
-.participatory-space__nav-item {
-  color: var(--space-nav-color);
-}
-
-.participatory-space__nav>:not([hidden])~:not([hidden]) {
-  border-color: var(--space-nav-color);
-}
-
-/*–––––––– Style Callouts ––––––*/
-
-#flash-messages-container {
-  padding: 0;
-  margin: 0;
-  max-width: 100%;
-}
-
-.flash {
-  padding: 1rem 3rem;
-  margin: 0;
-  border: 4px solid var(--primary);
-}
-
-.flash__message p {
-  font-size: var(--font-size-regular);
-}
-
-/*@media screen and (max-width: 1024px){
-  .flash {
-      padding: var(--stzh-space-medium) var(--stzh-space-large);
-  }
-}*/
-
-.flash__message {
-  font-size: var(--font-size-regular);
-  font-weight: var(--font-weight-bold);
-}
-
-/*.flash__title {
-  color: var(--color-white);
-}*/
-
-.flash__icon svg {
-  fill: var(--color-white);
-  height: 1.5rem;
-  width: 1.5rem;
-}
-
-.flash .close-button svg {
-  fill: var(--color-white);
-  height: 1.5rem;
-  width: 1.5rem;
-}
-
-.flash.success {
-  font-weight: var(--font-weight-bold);
-  --background-flash: var(--success);
-  background-color: var(--background-flash);
-  border: none;
-  align-items: center;
-  justify-content: center;
-}
-
-.success > .flash__message {
-  color: var(--color-white);
-}
-
-.flash.warning {
-  font-weight: var(--font-weight-bold);
-  --background-flash: var(--warning);
-  background-color: var(--background-flash);
-  border: none;
-  align-items: center;
-  justify-content: center;
-}
-
-.warning > .flash__message {
-  color: var(--color-white);
-}
-
-.flash.alert {
-  font-weight: var(--font-weight-heavy);
-  --background-flash: var(--alert);
-  background-color: var(--background-flash);
-  border: none;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.alert > .flash__message {
-  color: var(--color-white);
-}
-
-
-.flash.secondary {
-  --background-flash: var(--winterthur-lightgrey);
-  background-color: var(--background-flash);
-  border: none;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Enlarge Process nav*/
-@media (min-width: 768px){
-header .menu-bar__secondary-dropdown nav {
-width: 45%;
-  }}
-
-header .menu-bar__secondary-dropdown nav {
-  background-color: var(--primary);
-}
-
-/*Center images in texts*/
-.editor-content-image img {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/*Footers*/
-.mini-footer{
-  background-color: var(--mini-footer-color);
-}
-
-footer .main-footer {
-  border-top: 5px solid var(--primary);
-}
-
-/*Buttons*/
-/* to-do: clean up*/
-.button__secondary {
-  background-color: var(--button-secondary);
-  border-color: var(--color-white);
-}
-
-.button__transparent-secondary{
-  border-color: var(--button-secondary);
-  color: var(--button-secondary);
-}
-
-.button.is-hover, .button:not([disabled]):not([class*=button__text]):not(label):hover {
-  background: linear-gradient(0deg,#0000004d,#0000004d),var(--button-secondary);
-}
-
-/*Decrease padding on mobile buttons*/
-@media (max-width: 768px){
-  .button__sm:not([class*=button__text]) {
-    padding: .375rem .375rem;
   }
 }
 
-/*pills*/
-.button__pill--active {
-  background-color: var(--button-tertiary);
+
+/* ================================================================
+   6. Layout – Full-width for Survey, Blog & Page Components
+   ================================================================ */
+
+.layout-1col.cols-6 > * {
+  grid-column: span 12 / span 12;
+  align-self: flex-start;
 }
 
-/*Breadcrumb & menu*/
-
-header .menu-bar__secondary-dropdown__menu, #menu-bar, header .menu-bar__dropdown-menu {
-  --tw-bg-opacity: 0;
-  background-color: var(--primary);
+@media (min-width: 768px) {
+  .layout-1col.cols-6 > * {
+    grid-column: span 12 / span 12;
+    grid-column-start: 0;
+  }
 }
 
-/*––––––––Process/Assembly hero––––––––––*/
+@media (min-width: 1024px) {
+  .layout-1col.cols-6 > * {
+    grid-column: span 12 / span 12;
+    grid-column-start: 0;
+  }
+}
 
-/* Hero layout container */
+
+/* ================================================================
+   7. Process / Assembly Hero Banner
+   ================================================================ */
+
+/* Hero container */
 .participatory-space__hero {
   position: relative;
   display: flex;
@@ -336,7 +322,7 @@ header .menu-bar__secondary-dropdown__menu, #menu-bar, header .menu-bar__dropdow
   }
 }
 
-/* Red overlay on left half */
+/* Colored overlay on left half */
 .participatory-space__hero::before {
   content: '';
   position: absolute;
@@ -356,7 +342,7 @@ header .menu-bar__secondary-dropdown__menu, #menu-bar, header .menu-bar__dropdow
   }
 }
 
-/* Constrain text to left side and align with .participatory-space__container content */
+/* Hero text – constrained to left half, aligned with main container */
 .participatory-space__hero-text {
   position: relative;
   z-index: 2;
@@ -365,8 +351,6 @@ header .menu-bar__secondary-dropdown__menu, #menu-bar, header .menu-bar__dropdow
   gap: 1rem;
   text-align: left;
   margin-left: auto;
-  /*padding-left: 4rem;
-  padding-right: 4rem;*/
   max-width: 1536px;
   box-sizing: border-box;
   color: var(--banner-text-color);
@@ -376,7 +360,6 @@ header .menu-bar__secondary-dropdown__menu, #menu-bar, header .menu-bar__dropdow
   color: var(--banner-text-color);
 }
 
-
 @media (max-width: 768px) {
   .participatory-space__hero-text {
     width: 100%;
@@ -384,8 +367,8 @@ header .menu-bar__secondary-dropdown__menu, #menu-bar, header .menu-bar__dropdow
     height: auto;
     margin-right: 0;
     margin-left: 0;
-    padding: 0rem;
-    gap: 0rem;
+    padding: 0;
+    gap: 0;
   }
 }
 
@@ -394,21 +377,8 @@ header .menu-bar__secondary-dropdown__menu, #menu-bar, header .menu-bar__dropdow
     width: 50%;
     margin-right: 50%;
     max-width: 50vw;
-  }}
-
-.participatory-space__hero-slogan {
-  color: var(--banner-text-color);
-  font-family: var(--font-family);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-large);
-}
-
-@media screen and (min-width: 1280px){
-  .participatory-space__hero-slogan {
-    font-size: var(--font-size-medium);
   }
 }
-
 
 @media (min-width: 1024px) {
   .participatory-space__hero-text {
@@ -424,49 +394,202 @@ header .menu-bar__secondary-dropdown__menu, #menu-bar, header .menu-bar__dropdow
   }
 }
 
-
 @media (min-width: 1536px) {
   .participatory-space__hero-text {
     max-width: 1536px;
   }
 }
 
-/* Ensure the section's background-image behaves as expected */
-section:has(.participatory-space__hero) {
-  background-repeat: no-repeat;
-  background-position: 50vw center; /* Start at center of viewport */
-  background-size: auto 100%; /* Keep image ratio, fit full height */
-  background-color: var(--banner-color); /* fallback for left side */
+/* Hero slogan */
+.participatory-space__hero-slogan {
+  color: var(--banner-text-color);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-large);
 }
 
-@media (max-width: 768px){
+@media (min-width: 1280px) {
+  .participatory-space__hero-slogan {
+    font-size: var(--font-size-medium);
+  }
+}
+
+/* Hero background image */
+section:has(.participatory-space__hero) {
+  background-repeat: no-repeat;
+  background-position: 50vw center;
+  background-size: auto 100%;
+  background-color: var(--banner-color);
+}
+
+@media (max-width: 768px) {
   section:has(.participatory-space__hero) {
     background-position: center bottom;
     background-size: 100% auto;
   }
 }
 
+/* Hero CTA button */
 .participatory-space__hero-text .button {
-  width: auto ;
+  width: auto;
   flex: 0 0 auto;
   align-self: flex-start;
   display: inline-block;
 }
 
-/* Hide "About this Process" title */ 
+/* Hide "About this Process" title */
 .participatory-space__content-block > .space-y-8 > .h2.decorator {
   display: none;
 }
 
-/*–––––Forms–––––*/
-.filter-container input[type=checkbox]:checked, 
-.filter-container input[type=checkbox]:indeterminate, 
-.filter-container input[type=radio]:checked, 
-.filter-container input[type=radio]:indeterminate {
-accent-color: var(--secondary);
+
+/* ================================================================
+   8. Flash Messages / Callouts
+   ================================================================ */
+
+#flash-messages-container {
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
 }
 
-/*––––––––––––Maps–––––––––––––––*/
+.flash {
+  padding: 1rem 3rem;
+  margin: 0;
+  border: 4px solid var(--primary);
+}
+
+.flash__message {
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-bold);
+}
+
+.flash__message p {
+  font-size: var(--font-size-normal);
+}
+
+.flash__icon svg,
+.flash .close-button svg {
+  fill: var(--color-white);
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+/* Success variant */
+.flash.success {
+  font-weight: var(--font-weight-bold);
+  --background-flash: var(--success);
+  background-color: var(--background-flash);
+  border: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.success > .flash__message {
+  color: var(--color-white);
+}
+
+/* Warning variant */
+.flash.warning {
+  font-weight: var(--font-weight-bold);
+  --background-flash: var(--warning);
+  background-color: var(--background-flash);
+  border: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.warning > .flash__message {
+  color: var(--color-white);
+}
+
+/* Alert variant */
+.flash.alert {
+  font-weight: var(--font-weight-heavy);
+  --background-flash: var(--alert);
+  background-color: var(--background-flash);
+  border: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.alert > .flash__message {
+  color: var(--color-white);
+}
+
+/* Secondary variant */
+.flash.secondary {
+  --background-flash: var(--winterthur-lightgrey);
+  background-color: var(--background-flash);
+  border: none;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ================================================================
+   9. Buttons
+   ================================================================ */
+
+.button__secondary {
+  background-color: var(--button-secondary);
+  border-color: var(--color-white);
+}
+
+.button__transparent-secondary {
+  border-color: var(--button-secondary);
+  color: var(--button-secondary);
+}
+
+/* Hover darkening overlay */
+.button.is-hover,
+.button:not([disabled]):not([class*=button__text]):not(label):hover {
+  background: linear-gradient(0deg, #0000004d, #0000004d), var(--button-secondary);
+}
+
+/* Smaller padding on mobile */
+@media (max-width: 768px) {
+  .button__sm:not([class*=button__text]) {
+    padding: .375rem .375rem;
+  }
+}
+
+/* Active pill */
+.button__pill--active {
+  background-color: var(--button-tertiary);
+}
+
+
+/* ================================================================
+   10. Footer
+   ================================================================ */
+
+.mini-footer {
+  background-color: var(--mini-footer-color);
+}
+
+footer .main-footer {
+  border-top: 5px solid var(--primary);
+}
+
+
+/* ================================================================
+   11. Forms
+   ================================================================ */
+
+.filter-container input[type=checkbox]:checked,
+.filter-container input[type=checkbox]:indeterminate,
+.filter-container input[type=radio]:checked,
+.filter-container input[type=radio]:indeterminate {
+  accent-color: var(--secondary);
+}
+
+
+/* ================================================================
+   12. Maps
+   ================================================================ */
+
+/* Marker icon color */
 .leaflet-div-icon {
   color: var(--marker-color);
 }
@@ -475,29 +598,25 @@ accent-color: var(--secondary);
   fill: var(--marker-color);
 }
 
-/*.leaflet-div-icon svg path:not([fill="none"]) {
-  stroke: var(--color-white);
-  stroke-width: 0.5px;
-}*/
-
-/*Change cluster color*/
+/* Cluster marker */
 .marker-cluster-small div {
   background-color: var(--marker-color);
   color: var(--color-white);
   font-weight: var(--font-weight-bold);
 }
 
-/*Increase proposal submission map*/
+/* Larger map for proposal submission */
 .proposal__container [data-decidim-map] {
-aspect-ratio: 5/3;
+  aspect-ratio: 5 / 3;
 }
 
-/*––––––––––––Budgets–––––––––––––*/
-/*Fix transparent sticky banner on budgets & improve visibility of content*/
-.progressbox-fixed-wrapper {
-  background-color: var(--banner-color);
-}
 
+/* ================================================================
+   13. Budgets
+   ================================================================ */
+
+/* Sticky banner & summary backgrounds */
+.progressbox-fixed-wrapper,
 .budget-summary__content {
   background-color: var(--banner-color);
 }
@@ -510,23 +629,21 @@ aspect-ratio: 5/3;
   padding-top: 1rem;
 }
 
-/*Increase small progressbar font size*/
+/* Progressbar legend */
 .budget-summary__progressbar-legend-strong {
   font-size: var(--font-size-micro);
 }
 
-/*Increase dropdown trigger*/
-#dropdown-trigger-button-dropdown, .budget-summary__button-dropdown {
-  background-color: var(--banner-color);
-  font-size: var(--font-size-xsmall);
-}
-
+/* Dropdown triggers */
+#dropdown-trigger-button-dropdown,
+.budget-summary__button-dropdown,
 #dropdown-menu-button-dropdown {
   background-color: var(--banner-color);
   font-size: var(--font-size-xsmall);
 }
 
-#dropdown-trigger-filters, #dropdown-trigger-order{
+#dropdown-trigger-filters,
+#dropdown-trigger-order {
   font-size: var(--font-size-xsmall);
 }
 
@@ -534,25 +651,56 @@ aspect-ratio: 5/3;
   display: block;
 }
 
-@media (max-width: 768px){
-[data-target*=dropdown].order-by__button {
-justify-content: flex-start;
-}
+@media (max-width: 768px) {
+  [data-target*=dropdown].order-by__button {
+    justify-content: flex-start;
+  }
 }
 
-/* Improve UX of vote button*/
+/* Vote confirmation button – green to signal positive action */
 .button[data-dialog-open="budget-confirm"]:not([disabled]):not([class*=button__text]):not(label) {
   background: var(--success);
 }
 
 .button[data-dialog-open="budget-confirm"]:not([disabled]):not([class*=button__text]):not(label):hover {
-  background: linear-gradient(0deg,#0000004d,#0000004d),var(--success);
+  background: linear-gradient(0deg, #0000004d, #0000004d), var(--success);
 }
 
-/*–––––Cards––––––*/
 
-.card__list:hover {
-  background-color: var(--card-hover-bg-color);
+/* ================================================================
+   14. Cards
+   ================================================================ */
+
+/* Cards – shadow and hover only, no borders. */
+.card__list {
+  display: flex;
+  flex-direction: column;
+  gap: .625rem;
+  overflow: hidden;
+  position: relative;
+  --tw-ring-width: 0;
+  background-color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-md);
+  padding-right: 1rem;
+  box-shadow: var(--card-shadow);
+  transition: box-shadow 0.2s ease;
+}
+
+.card__grid {
+  position: relative;
+  --tw-ring-width: 0;
+  background-color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-md);
+  box-shadow: var(--card-shadow);
+  transition: box-shadow 0.2s ease;
+}
+
+.card__list:hover,
+.card__grid:hover,
+a.card__list:hover {
+  box-shadow: var(--card-shadow-hover), 0 0 0 4px var(--primary);
 }
 
 .card__list-content {
@@ -567,4 +715,43 @@ a .card__list-title {
   font-family: var(--font-family);
 }
 
-  
+/* ================================================================
+   Calendar entries (card__list card__calendar-list__reset)
+   From Lucerne restyle
+   ================================================================ */
+
+/* Event cards – meeting/event list date squares use primary */
+.card__calendar-month,
+.meeting__calendar-month {
+  background-color: var(--primary) !important;
+}
+
+/* Calendar date tiles – same height as card container, date and info align */
+.card__list.card__calendar-list__reset {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;
+}
+
+.card__list.card__calendar-list__reset .card__calendar {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-shrink: 0;
+}
+
+.card__list.card__calendar-list__reset .card__list-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Event/meeting cards – calendar icons and links align with primary */
+.meeting-list .card,
+.meeting-list__block .card {
+  border: none;
+}
