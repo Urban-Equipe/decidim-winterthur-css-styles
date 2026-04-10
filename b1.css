@@ -639,6 +639,134 @@ footer .main-footer {
   aspect-ratio: 5 / 3;
 }
 
+/* Awesome map / Leaflet popups   Decidim map.scss uses bg-black + text-white on the wrapper while .card__list
+   stays white → body text in .card__list-content becomes invisible. Reset to
+   light popup with dark text. */
+.leaflet-popup.map-info,
+.leaflet-popup {
+  min-width: 0 !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: var(--color-white) !important;
+  background-image: none !important;
+  color: var(--winterthur-grey) !important;
+  border-radius: var(--radius-md);
+  box-shadow: var(--card-shadow);
+  padding: 0 !important;
+  width: max-content !important;
+  /* Avoid min(vw, rem): some scoped CSS validators reject mixed units */
+  max-width: 28rem !important;
+}
+
+@media (max-width: 30rem) {
+  .leaflet-popup-content-wrapper {
+    max-width: 92vw !important;
+  }
+}
+
+.leaflet-popup-content {
+  color: var(--winterthur-grey);
+  font-size: var(--font-size-normal);
+  line-height: var(--line-height-paragraph);
+  margin: 0.5rem 0.75rem !important;
+  width: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+}
+
+.leaflet-popup-content p {
+  margin: 0.35rem 0 !important;
+}
+
+.leaflet-popup-content .space-y-6 > * + *,
+.leaflet-popup-content [class*="space-y-6"] > * + * {
+  margin-top: 0.5rem !important;
+}
+
+.leaflet-popup-content-wrapper .card__list {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible;
+  color: var(--winterthur-grey) !important;
+  gap: 0.35rem !important;
+  padding-right: 0 !important;
+}
+
+.leaflet-popup-content-wrapper .card__list-content {
+  color: var(--winterthur-grey) !important;
+  overflow: visible;
+  padding: 0.25rem 0.5rem !important;
+  width: 100%;
+  min-width: 0;
+}
+
+.leaflet-popup-content-wrapper .card__list-content p,
+.leaflet-popup-content-wrapper .card__list-content span {
+  color: inherit;
+}
+
+/* Title must wrap (Decidim map.scss applies truncate on .card__list-title) */
+.leaflet-popup-content-wrapper .card__list-title,
+.leaflet-popup-content-wrapper a .card__list-title {
+  color: var(--heading-color) !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+  display: block !important;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.leaflet-popup-content-wrapper .card__list-content > a {
+  display: block;
+  max-width: 100%;
+}
+
+.leaflet-popup-content-wrapper .card__list-metadata {
+  font-size: var(--font-size-xsmall) !important;
+}
+
+.leaflet-popup-content-wrapper .card__list-metadata,
+.leaflet-popup-content-wrapper .card__list-metadata span,
+.leaflet-popup-content-wrapper .card__list-metadata svg {
+  color: var(--winterthur-grey) !important;
+}
+
+.leaflet-popup-content-wrapper .card__list-metadata svg {
+  width: 0.75rem !important;
+  height: 0.75rem !important;
+  flex-shrink: 0;
+}
+
+.leaflet-popup-content-wrapper a {
+  color: var(--primary);
+}
+
+.leaflet-popup-content-wrapper a:hover {
+  text-decoration: underline;
+}
+
+.leaflet-popup-content-wrapper svg {
+  fill: var(--winterthur-grey) !important;
+}
+
+.leaflet-popup-tip {
+  background-color: var(--color-white) !important;
+  background-image: none !important;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  color: var(--heading-color);
+}
+
+.leaflet-container a.leaflet-popup-close-button:hover {
+  color: var(--primary);
+}
+
 
 /* ================================================================
    13. Budgets
