@@ -250,6 +250,31 @@ header .main-bar__avatar {
   border-color: var(--primary);
 }
 
+/* Account menu trigger without avatar: initials must stay visible (red circle + white text like avatar ring) */
+header #trigger-dropdown-account.main-bar__dropdown-trigger .main-bar__links-desktop__item-account {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 2rem;
+  height: 2rem;
+  min-width: 2rem;
+  min-height: 2rem;
+  border-radius: 9999px;
+  background-color: var(--primary) !important;
+  color: var(--color-white) !important;
+  border: 2px solid var(--primary);
+  font-size: var(--font-size-xsmall);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  margin-right: 0.5rem;
+}
+
+header #trigger-dropdown-account.main-bar__dropdown-trigger:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
 
 /* ================================================================
    4. Space Navigation
