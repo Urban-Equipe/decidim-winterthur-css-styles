@@ -869,6 +869,20 @@ footer .main-footer {
   transition: box-shadow 0.2s ease;
 }
 
+/* Accountability results: progress lives as sibling of .card__list-content; keep one row
+   so “100 %” aligns with title/metadata (Decidim uses ml-auto on .accountability__progress). */
+.card__list:has(> .accountability__progress) {
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.625rem;
+}
+
+.card__list:has(> .accountability__progress) > .card__list-content {
+  flex: 1;
+  min-width: 0;
+}
+
 .card__grid {
   position: relative;
   --tw-ring-width: 0;
