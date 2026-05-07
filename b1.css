@@ -903,6 +903,10 @@ a.card__list:hover {
   padding: 0.5rem 1rem;
 }
 
+.card__list-list .card__proposals-item .card__list {
+  align-items: flex-start;
+}
+
 a .card__list-title {
   color: var(--card-title-color);
 }
